@@ -1,0 +1,21 @@
+platform: ocp
+versionlabel: v2
+applabel: argocd
+image_reg: quay.io/justindav1s
+image_name: inventory
+image_tag: latest
+containerport: 8080
+spring_active_profile: dev
+replicas: 1
+container:
+  env:
+  - name: SPRING_PROFILES_ACTIVE
+    value: dev
+  - name: test.host
+    value: test:8080
+  - name: test.host
+    value: test:8080
+  - name: test.host
+    value: test:8080
+  - name: something
+    value: something else    
