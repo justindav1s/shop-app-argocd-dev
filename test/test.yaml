@@ -12,11 +12,11 @@ spec:
     helm:
       parameters:
        - name: build.enabled
-          value: "false"
-        - name: deploy.route.tls.enabled
-          value: "true"
+         value: "false"
+       - name: deploy.route.tls.enabled
+         value: "true"
        - name: image.name
-          value: quay.io/ablock/gitops-helm-quarkus
+         value: quay.io/ablock/gitops-helm-quarkus
     chart: quarkus
     repoURL: https://redhat-developer.github.com/redhat-helm-charts
     targetRevision: 0.0.3
