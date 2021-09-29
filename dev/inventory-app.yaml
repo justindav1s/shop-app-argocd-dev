@@ -11,24 +11,24 @@ spec:
   source:
     helm:
       parameters:
-       - name: platform
-          value: ocp
-       - name: versionlabel
-          value: v2
-       - name: applabel
-          value: flux
-       - name: image_reg
-          value: quay.io/justindav1s
-       - name: image_name
-          value: inventory
-       - name: image_tag
-          value: latest
-       - name: containerport
-          value: 8080
-       - name: spring_active_profile
-          value: dev
-       - name: replicas
-          value: 1 
+      - name: platform
+        value: ocp
+      - name: versionlabel
+        value: v2
+      - name: applabel
+        value: flux
+      - name: image_reg
+        value: quay.io/justindav1s
+      - name: image_name
+        value: inventory
+      - name: image_tag
+        value: latest
+      - name: containerport
+        value: 8080
+      - name: spring_active_profile
+        value: dev
+      - name: replicas
+        value: 1 
     chart: microservice
     repoURL: https://raw.githubusercontent.com/justindav1s/helm-charts/main/charts/
     targetRevision: 1.0.17
