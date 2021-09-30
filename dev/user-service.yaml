@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: user
+  namespace: argocd
+spec:
+  destination:
+    namespace: shop-dev
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      parameters:
+      - name: platform
+        value: ocp
+      - name: versionlabel
+        value: v1
+      - name: applabel
+        value: argocd
+      - name: image_reg
+        value: quay.io/justindav1s
+      - name: image_name
+        value: user
+      - name: image_tag
+        value: latest
+      - name: containerport
+        value: "8080"
+      - name: spring_active_profile
+        value: dev
+      - name: replicas
+        value: "1"
+    chart: microservice
+    repoURL: https://raw.githubusercontent.com/justindav1s/helm-charts/main/charts/
+    targetRevision: 1.0.18
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
